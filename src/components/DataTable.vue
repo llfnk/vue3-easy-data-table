@@ -46,7 +46,6 @@
               // eslint-disable-next-line max-len
               }, typeof headerItemClassName === 'string' ? headerItemClassName : headerItemClassName(header as Header, index + 1)]"
               :style="getFixedDistance(header.value)"
-              @click.stop="(header.sortable && header.sortType) ? updateSortField(header.value, header.sortType) : null"
             >
               <MultipleSelectCheckBox
                 v-if="header.text === 'checkbox'"
@@ -73,7 +72,7 @@
                   v-else-if="slots['header']"
                   name="header"
                   v-bind="header"
-                />   
+                />
                 <span
                   v-else
                   class="header-text"
@@ -145,7 +144,7 @@
                 // eslint-disable-next-line max-len
                 }, typeof bodyItemClassName === 'string' ? bodyItemClassName : bodyItemClassName(column, index + 1), `direction-${bodyTextDirection}`]"
                 @click="column === 'expand' ? updateExpandingItemIndexList(index + prevPageEndIndex, item, $event) : null"
-              > 
+              >
                 <slot
                   v-if="slots[`item-${column}`]"
                   :name="`item-${column}`"
