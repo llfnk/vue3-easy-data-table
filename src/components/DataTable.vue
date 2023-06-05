@@ -57,6 +57,7 @@
                 v-else
                 class="header"
                 :class="`direction-${headerTextDirection}`"
+
               >
                 <slot
                   v-if="slots[`header-${header.value}`]"
@@ -84,6 +85,7 @@
                   :key="header.sortType ? header.sortType : 'none'"
                   class="sortType-icon"
                   :class="{'desc': header.sortType === 'desc'}"
+                  @click.stop="(header.sortable && header.sortType) ? updateSortField(header.value, header.sortType) : null"
                 ></i>
                 <span
                   v-if="multiSort && isMultiSorting(header.value)"
