@@ -1,9 +1,9 @@
 {
-  "name": "vue3-easy-data-table",
+  "name": "vue3-easy-data-table-fork-feniu",
   "author": "HC200ok",
   "description": "A customizable and easy-to-use data table component made with Vue.js 3.x.",
   "private": false,
-  "version": "1.5.44",
+  "version": "1.5.43",
   "types": "./types/main.d.ts",
   "license": "MIT",
   "files": [
