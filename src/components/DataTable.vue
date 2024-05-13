@@ -47,12 +47,13 @@
               }, typeof headerItemClassName === 'string' ? headerItemClassName : headerItemClassName(header as Header, index + 1)]"
               :style="getFixedDistance(header.value)"
             >
-              <MultipleSelectCheckBox
-                v-if="header.text === 'checkbox'"
-                :key="multipleSelectStatus"
-                :status="multipleSelectStatus"
-                @change="toggleSelectAll"
-              />
+<!--              <MultipleSelectCheckBox-->
+<!--                v-if="header.text === 'checkbox'"-->
+<!--                :key="multipleSelectStatus"-->
+<!--                :status="multipleSelectStatus"-->
+<!--                @change="toggleSelectAll"-->
+<!--              />-->
+              <span v-if="header.text === 'checkbox'"></span>
               <span
                 v-else
                 class="header"
@@ -167,6 +168,7 @@
                   <SingleSelectCheckBox
                     :checked="item[column]"
                     :disabled-for-checkbox="disabledForCheckbox"
+                    :item="item"
                     @change="toggleSelectItem(item)"
                   />
                 </template>
@@ -370,8 +372,7 @@ const {
   tableMinHeight,
   themeColor,
   rowsOfPageSeparatorMessage,
-  showIndexSymbol,
-    disabledForCheckbox
+  showIndexSymbol
 } = toRefs(props);
 
 // style related computed variables

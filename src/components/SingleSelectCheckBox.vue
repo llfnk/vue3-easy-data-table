@@ -1,28 +1,40 @@
 <template>
   <div
     class="easy-checkbox"
-    @click.stop.prevent="emits('change')"
+    @click.stop.prevent="changeStatus"
   >
     <input
       type="checkbox"
       :checked="checked"
+      :disabled="isDisabled"
     >
     <label for="checbox" />
-    {{ disabledForCheckbox }}
   </div>
 </template>
 
 <script setup lang="ts">
-import { inject } from 'vue';
+import { inject,computed } from 'vue';
 
 const emits = defineEmits(['change']);
 
-defineProps({
+const props = defineProps({
   checked: { type: Boolean, required: true },
-  disabledForCheckbox: {}
+  disabledForCheckbox: [],
+  item:{}
 });
 
 const themeColor = inject('themeColor');
+
+const isDisabled = computed(() =>{
+ return (props.disabledForCheckbox).includes(props.item?.uuid);
+})
+
+const changeStatus = () => {
+  if(!(props.disabledForCheckbox).includes(props.item?.uuid)){
+    emits('change')
+  }
+
+}
 </script>
 
 <style lang="scss" scoped>

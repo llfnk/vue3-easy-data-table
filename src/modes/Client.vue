@@ -43,6 +43,7 @@
       @deselect-row="deselectRow"
       @update-page-items="updateItems"
       @update-total-items="updateTotalItems"
+      :disabled-for-checkbox="[34]"
       show-index-symbol="$"
     >
      <!-- <template #customize-headers>

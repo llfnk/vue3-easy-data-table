@@ -52,7 +52,15 @@ $line-color: #fff;
     display: block;
     float: left;
     font-size: inherit;
-
+    &:disabled{
+      opacity:0.5;
+      + label:before{
+       opacity:0.5;
+      }
+      + label:after {
+      opacity:0.5;
+      }
+    }
     &:checked {
       + label:before{
         border: none;
