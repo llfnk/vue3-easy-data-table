@@ -1,7 +1,7 @@
 {
   "name": "vue3-easy-data-table-fork-feniu",
   "private": false,
-  "version": "1.5.43",
+  "version": "1.5.44",
   "types": "./types/main.d.ts",
   "license": "MIT",
   "files": [
