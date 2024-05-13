@@ -17,7 +17,7 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-import { defineComponent, useCssVars, unref, computed, inject, openBlock, createElementBlock, withModifiers, createElementVNode, normalizeClass, pushScopeId, popScopeId, ref, watch, onMounted, onBeforeUnmount, toDisplayString, Fragment, renderList, useSlots, renderSlot, createCommentVNode, toRefs, provide, normalizeStyle, createBlock, normalizeProps, mergeProps, guardReactiveProps, createTextVNode, createVNode, isRef, createSlots, withCtx } from "vue";
+import { defineComponent, useCssVars, unref, computed, inject, openBlock, createElementBlock, withModifiers, createElementVNode, normalizeClass, pushScopeId, popScopeId, createTextVNode, toDisplayString, ref, watch, onMounted, onBeforeUnmount, Fragment, renderList, useSlots, renderSlot, createCommentVNode, toRefs, provide, normalizeStyle, createBlock, normalizeProps, mergeProps, guardReactiveProps, createVNode, isRef, createSlots, withCtx } from "vue";
 var MultipleSelectCheckBox_vue_vue_type_style_index_0_scoped_true_lang = "";
 var _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
@@ -63,18 +63,19 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
 });
 var MultipleSelectCheckBox = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-e0a0b7f0"]]);
 var SingleSelectCheckBox_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _withScopeId$4 = (n) => (pushScopeId("data-v-7e69a276"), n = n(), popScopeId(), n);
+const _withScopeId$4 = (n) => (pushScopeId("data-v-9b6bf7ac"), n = n(), popScopeId(), n);
 const _hoisted_1$6 = ["checked"];
 const _hoisted_2$5 = /* @__PURE__ */ _withScopeId$4(() => /* @__PURE__ */ createElementVNode("label", { for: "checbox" }, null, -1));
 const _sfc_main$6 = /* @__PURE__ */ defineComponent({
   __name: "SingleSelectCheckBox",
   props: {
-    checked: { type: Boolean, required: true }
+    checked: { type: Boolean, required: true },
+    disabledForCheckbox: {}
   },
   emits: ["change"],
   setup(__props, { emit: emits }) {
     useCssVars((_ctx) => ({
-      "fdaf7e9e": unref(themeColor)
+      "04a1e510": unref(themeColor)
     }));
     const themeColor = inject("themeColor");
     return (_ctx, _cache) => {
@@ -86,12 +87,13 @@ const _sfc_main$6 = /* @__PURE__ */ defineComponent({
           type: "checkbox",
           checked: __props.checked
         }, null, 8, _hoisted_1$6),
-        _hoisted_2$5
+        _hoisted_2$5,
+        createTextVNode(" " + toDisplayString(__props.disabledForCheckbox), 1)
       ]);
     };
   }
 });
-var SingleSelectCheckBox = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-7e69a276"]]);
+var SingleSelectCheckBox = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-9b6bf7ac"]]);
 var RowsSelector_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _withScopeId$3 = (n) => (pushScopeId("data-v-4ca5de3a"), n = n(), popScopeId(), n);
 const _hoisted_1$5 = { class: "easy-data-table__rows-selector" };
@@ -1209,38 +1211,39 @@ var propsWithDefault = {
 };
 var DataTable_vue_vue_type_style_index_0_lang = "";
 var DataTable_vue_vue_type_style_index_1_scoped_true_lang = "";
-const _withScopeId = (n) => (pushScopeId("data-v-08508898"), n = n(), popScopeId(), n);
+const _withScopeId = (n) => (pushScopeId("data-v-62b24900"), n = n(), popScopeId(), n);
 const _hoisted_1 = ["id"];
 const _hoisted_2 = {
   key: 3,
   class: "header-text"
 };
-const _hoisted_3 = {
+const _hoisted_3 = ["onClick"];
+const _hoisted_4 = {
   key: 5,
   class: "multi-sort__number"
 };
-const _hoisted_4 = ["onClick", "onDblclick", "onContextmenu"];
-const _hoisted_5 = ["onClick"];
-const _hoisted_6 = ["colspan"];
-const _hoisted_7 = {
+const _hoisted_5 = ["onClick", "onDblclick", "onContextmenu"];
+const _hoisted_6 = ["onClick"];
+const _hoisted_7 = ["colspan"];
+const _hoisted_8 = {
   key: 0,
   class: "vue3-easy-data-table__loading"
 };
-const _hoisted_8 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("div", { class: "vue3-easy-data-table__loading-mask" }, null, -1));
-const _hoisted_9 = { class: "loading-entity" };
-const _hoisted_10 = {
+const _hoisted_9 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("div", { class: "vue3-easy-data-table__loading-mask" }, null, -1));
+const _hoisted_10 = { class: "loading-entity" };
+const _hoisted_11 = {
   key: 1,
   class: "vue3-easy-data-table__message"
 };
-const _hoisted_11 = {
+const _hoisted_12 = {
   key: 0,
   class: "vue3-easy-data-table__footer"
 };
-const _hoisted_12 = {
+const _hoisted_13 = {
   key: 0,
   class: "pagination__rows-per-page"
 };
-const _hoisted_13 = { class: "pagination__items-index" };
+const _hoisted_14 = { class: "pagination__items-index" };
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "DataTable",
   props: __spreadProps(__spreadValues({}, propsWithDefault), {
@@ -1270,8 +1273,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
   setup(__props, { expose, emit: emits }) {
     const props = __props;
     useCssVars((_ctx) => ({
-      "e2944aea": unref(tableMinHeightPx),
-      "427ef545": unref(tableHeightPx)
+      "38fc7a5a": unref(tableMinHeightPx),
+      "37a5ffd6": unref(tableHeightPx)
     }));
     const {
       tableNodeId,
@@ -1306,7 +1309,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       tableMinHeight,
       themeColor,
       rowsOfPageSeparatorMessage,
-      showIndexSymbol
+      showIndexSymbol,
+      disabledForCheckbox
     } = toRefs(props);
     const tableHeightPx = computed(() => tableHeight.value ? `${tableHeight.value}px` : null);
     const tableMinHeightPx = computed(() => `${tableMinHeight.value}px`);
@@ -1502,9 +1506,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                       unref(slots)[`header-${header.value}`] ? renderSlot(_ctx.$slots, `header-${header.value}`, normalizeProps(mergeProps({ key: 0 }, header)), void 0, true) : unref(slots)[`header-${header.value.toLowerCase()}`] ? renderSlot(_ctx.$slots, `header-${header.value.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, header)), void 0, true) : unref(slots)["header"] ? renderSlot(_ctx.$slots, "header", normalizeProps(mergeProps({ key: 2 }, header)), void 0, true) : (openBlock(), createElementBlock("span", _hoisted_2, toDisplayString(header.text), 1)),
                       header.sortable ? (openBlock(), createElementBlock("i", {
                         key: header.sortType ? header.sortType : "none",
-                        class: normalizeClass(["sortType-icon", { "desc": header.sortType === "desc" }])
-                      }, null, 2)) : createCommentVNode("", true),
-                      unref(multiSort) && unref(isMultiSorting)(header.value) ? (openBlock(), createElementBlock("span", _hoisted_3, toDisplayString(unref(getMultiSortNumber)(header.value)), 1)) : createCommentVNode("", true)
+                        class: normalizeClass(["sortType-icon", { "desc": header.sortType === "desc" }]),
+                        onClick: withModifiers(($event) => header.sortable && header.sortType ? unref(updateSortField)(header.value, header.sortType) : null, ["stop"])
+                      }, null, 10, _hoisted_3)) : createCommentVNode("", true),
+                      unref(multiSort) && unref(isMultiSorting)(header.value) ? (openBlock(), createElementBlock("span", _hoisted_4, toDisplayString(unref(getMultiSortNumber)(header.value)), 1)) : createCommentVNode("", true)
                     ], 2))
                   ], 6);
                 }), 128))
@@ -1560,13 +1565,14 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                         }, null, 2)) : column === "checkbox" ? (openBlock(), createBlock(SingleSelectCheckBox, {
                           key: 3,
                           checked: item[column],
+                          "disabled-for-checkbox": unref(disabledForCheckbox),
                           onChange: ($event) => unref(toggleSelectItem)(item)
-                        }, null, 8, ["checked", "onChange"])) : unref(slots)["item"] ? renderSlot(_ctx.$slots, "item", normalizeProps(mergeProps({ key: 4 }, { column, item })), void 0, true) : (openBlock(), createElementBlock(Fragment, { key: 5 }, [
+                        }, null, 8, ["checked", "disabled-for-checkbox", "onChange"])) : unref(slots)["item"] ? renderSlot(_ctx.$slots, "item", normalizeProps(mergeProps({ key: 4 }, { column, item })), void 0, true) : (openBlock(), createElementBlock(Fragment, { key: 5 }, [
                           createTextVNode(toDisplayString(unref(generateColumnContent)(column, item)), 1)
                         ], 64))
-                      ], 14, _hoisted_5);
+                      ], 14, _hoisted_6);
                     }), 128))
-                  ], 42, _hoisted_4),
+                  ], 42, _hoisted_5),
                   unref(ifHasExpandSlot) && unref(expandingItemIndexList).includes(index + unref(prevPageEndIndex)) ? (openBlock(), createElementBlock("tr", {
                     key: 0,
                     class: normalizeClass([
@@ -1583,7 +1589,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                         class: "expand-loading"
                       })) : createCommentVNode("", true),
                       renderSlot(_ctx.$slots, "expand", normalizeProps(guardReactiveProps(item)), void 0, true)
-                    ], 8, _hoisted_6)
+                    ], 8, _hoisted_7)
                   ], 2)) : createCommentVNode("", true)
                 ], 64);
               }), 128)),
@@ -1602,20 +1608,20 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
               })), void 0, true)
             ], 2)) : createCommentVNode("", true)
           ], 8, _hoisted_1),
-          unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_7, [
-            _hoisted_8,
-            createElementVNode("div", _hoisted_9, [
+          unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_8, [
+            _hoisted_9,
+            createElementVNode("div", _hoisted_10, [
               unref(ifHasLoadingSlot) ? renderSlot(_ctx.$slots, "loading", { key: 0 }, void 0, true) : (openBlock(), createBlock(Loading, { key: 1 }))
             ])
           ])) : createCommentVNode("", true),
-          !unref(pageItems).length && !unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_10, [
+          !unref(pageItems).length && !unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_11, [
             renderSlot(_ctx.$slots, "empty-message", {}, () => [
               createTextVNode(toDisplayString(_ctx.emptyMessage), 1)
             ], true)
           ])) : createCommentVNode("", true)
         ], 2),
-        !_ctx.hideFooter ? (openBlock(), createElementBlock("div", _hoisted_11, [
-          !_ctx.hideRowsPerPage ? (openBlock(), createElementBlock("div", _hoisted_12, [
+        !_ctx.hideFooter ? (openBlock(), createElementBlock("div", _hoisted_12, [
+          !_ctx.hideRowsPerPage ? (openBlock(), createElementBlock("div", _hoisted_13, [
             createTextVNode(toDisplayString(_ctx.rowsPerPageMessage) + " ", 1),
             createVNode(RowsSelector, {
               modelValue: unref(rowsPerPageRef),
@@ -1623,7 +1629,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
               "rows-items": unref(rowsItemsComputed)
             }, null, 8, ["modelValue", "rows-items"])
           ])) : createCommentVNode("", true),
-          createElementVNode("div", _hoisted_13, toDisplayString(`${unref(currentPageFirstIndex)}\u2013${unref(currentPageLastIndex)}`) + " " + toDisplayString(unref(rowsOfPageSeparatorMessage)) + " " + toDisplayString(unref(totalItemsLength)), 1),
+          createElementVNode("div", _hoisted_14, toDisplayString(`${unref(currentPageFirstIndex)}\u2013${unref(currentPageLastIndex)}`) + " " + toDisplayString(unref(rowsOfPageSeparatorMessage)) + " " + toDisplayString(unref(totalItemsLength)), 1),
           unref(ifHasPaginationSlot) ? renderSlot(_ctx.$slots, "pagination", normalizeProps(mergeProps({ key: 1 }, {
             isFirstPage: unref(isFirstPage),
             isLastPage: unref(isLastPage),
@@ -1655,7 +1661,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-08508898"]]);
+var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-62b24900"]]);
 if (typeof window !== "undefined" && window.Vue) {
   window.Vue.createApp({}).component("Vue3EasyDataTable", DataTable);
 }

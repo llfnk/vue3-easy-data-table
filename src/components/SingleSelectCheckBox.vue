@@ -8,6 +8,7 @@
       :checked="checked"
     >
     <label for="checbox" />
+    {{ disabledForCheckbox }}
   </div>
 </template>
 
@@ -18,6 +19,7 @@ const emits = defineEmits(['change']);
 
 defineProps({
   checked: { type: Boolean, required: true },
+  disabledForCheckbox: {}
 });
 
 const themeColor = inject('themeColor');

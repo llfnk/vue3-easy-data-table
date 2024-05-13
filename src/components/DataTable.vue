@@ -166,6 +166,7 @@
                 <template v-else-if="column === 'checkbox'">
                   <SingleSelectCheckBox
                     :checked="item[column]"
+                    :disabled-for-checkbox="disabledForCheckbox"
                     @change="toggleSelectItem(item)"
                   />
                 </template>
@@ -370,6 +371,7 @@ const {
   themeColor,
   rowsOfPageSeparatorMessage,
   showIndexSymbol,
+    disabledForCheckbox
 } = toRefs(props);
 
 // style related computed variables
